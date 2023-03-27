@@ -3,6 +3,6 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    std::cout << "master version.04!" << std::endl;
+    std::cout << "branch lmx version.02!" << std::endl;
     return 0;
 }
