@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20)
+file(GLOB_RECURSE SRC_DIR CONFIGURE_DEPENDS src/*.cpp src/*.c include/*.h include/*.hpp)
+message("SRC_DIR: ${SRC_DIR}")
+add_library(others STATIC ${SRC_DIR})
+target_include_directories(others PUBLIC include)
