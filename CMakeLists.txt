@@ -33,28 +33,17 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 message(STATUS "Compile options for c: ${CMAKE_C_FLAGS}")
 message(STATUS "Compile options for c++: ${CMAKE_CXX_FLAGS}")
 
-##--------------------- 添加子目录模块 -----------------------------------##
+##--------------------- Global Macros --------------------------------------##
+##--------------------- Include directories --------------------------------##
+##--------------------- Source files ---------------------------------------##
 add_subdirectory(bsp)
 add_subdirectory(others)
 add_subdirectory(main)
 add_subdirectory(test)
-
+add_subdirectory(lambda)
+##--------------------- Build target ---------------------------------------##
+##--------------------- Merge library --------------------------------------##
+##--------------------- Build demo executable-------------------------------##
 ##--------------------- Build unit tests -----------------------------------##
-option(CMAKE_ENABLE_TEST "Whether to enable unit tests" ON)
-if(CMAKE_ENABLE_TEST)
-    message(STATUS "Unit tests enabled")
-    enable_testing()
-    add_subdirectory(gtest/googletest-release-1.10.0)
-    include_directories(gtest/googletest-release-1.10.0/googletest/include)
-
-    add_executable(test_add  test/src/test_add.cpp)
-    add_executable(test_minus test/src/test_minus.cpp)
-    add_executable(test_gtest_demo test/src/test_gtest_demo.cpp)
-    target_link_libraries(test_add bsp gtest gtest_main)
-    target_link_libraries(test_minus bsp gtest gtest_main)
-    target_link_libraries(test_gtest_demo bsp gtest gtest_main)
-
-    add_test(NAME test_add COMMAND test_add)
-    add_test(NAME test_minus COMMAND test_minus)
-    add_test(NAME test_gtest_demo COMMAND test_gtest_demo)
-endif ()
+##--------------------- Install and Package target -------------------------##
+##----Package, These variables should set before including CPack module ----##

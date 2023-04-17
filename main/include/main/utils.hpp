@@ -2,8 +2,8 @@
 // Created by LiMXin-PC on 2023/3/30.
 //
 
-#ifndef CPP_PROGRAM_UTILS_H
-#define CPP_PROGRAM_UTILS_H
+#ifndef CPP_PROGRAM_UTILS_HPP
+#define CPP_PROGRAM_UTILS_HPP
 
 #pragma once
 
@@ -23,4 +23,4 @@ namespace start_main {
 }
 
 
-#endif //CPP_PROGRAM_UTILS_H
+#endif //CPP_PROGRAM_UTILS_HPP
